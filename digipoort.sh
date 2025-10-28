@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source $HOME/env.sh
+source $PWD/env.sh
 
 export ebms_jdbc_url=jdbc:postgresql://localhost:5432/digipoort
 export ebms_jdbc_username=digipoort
@@ -10,5 +10,5 @@ export ebms_port=8888
 
 cd $DIGIPOORT_HOME
 rm digipoort.log
-nohup $JAVA_HOME/bin/java $JAVA_ARGS -cp ${HOME}/lib/${JDBCJAR}:${HOME}/lib/ebms-admin-${VERSION}.jar nl.clockwork.ebms.admin.StartEmbedded -soap -port 8080 $@ > digipoort.log &
+nohup $JAVA_HOME/bin/java $JAVA_ARGS -cp ${JDBCJAR}:${EBMSJAR} nl.clockwork.ebms.admin.StartEmbedded -soap -port 8080 $@ > digipoort.log &
 echo $! > digipoort.pid

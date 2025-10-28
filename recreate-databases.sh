@@ -15,6 +15,7 @@ sudo -u postgres psql -c "alter user digipoort with encrypted password 'digipoor
 sudo -u postgres dropdb digipoort
 sudo -u postgres createdb digipoort
 sudo -u postgres psql -c "grant all privileges on database digipoort to digipoort"
+sudo -u postgres psql -d digipoort -c "grant all privileges on schema public to digipoort"
 export PGPASSWORD=digipoort
 for sqlscript in $SQL_SCRIPTS; do
   psql -h localhost -d digipoort -U digipoort -w -f $HOME/sql/$sqlscript
@@ -25,6 +26,7 @@ sudo -u postgres psql -c "alter user overheid with encrypted password 'overheid'
 sudo -u postgres dropdb overheid
 sudo -u postgres createdb overheid
 sudo -u postgres psql -c "grant all privileges on database overheid to overheid"
+sudo -u postgres psql -d overheid -c "grant all privileges on schema public to overheid"
 export PGPASSWORD=overheid
 for sqlscript in $SQL_SCRIPTS; do
   psql -h localhost -d overheid -U overheid -w -f $HOME/sql/$sqlscript
