@@ -1,6 +1,6 @@
 # install packages
 sudo apt update
-sudo apt install openjdk-8-jre-headless openjdk-11-jre-headless openjdk-17-jre-headlesspostgresql
+sudo apt install openjdk-8-jre-headless openjdk-11-jre-headless openjdk-17-jre-headless postgresql
 
 # "install" jmeter
 JMETER_VERSION=5.4.1
@@ -27,3 +27,4 @@ curl -L https://github.com/eluinstra/ebms-admin/releases/download/ebms-admin.2.1
 curl -L https://github.com/eluinstra/ebms-admin/releases/download/ebms-admin-2.17.7/ebms-admin-2.17.7.jar -o lib/ebms-admin-2.17.7.jar
 curl -L https://github.com/eluinstra/ebms-admin/releases/download/ebms-admin-2.17.7/ebms-admin-2.17.7.jar -o lib/ebms-admin-2.17.7.jar
 curl -L https://github.com/eluinstra/ebms-admin/releases/download/ebms-admin-2.19.5/ebms-admin-2.19.5.jar -o lib/ebms-admin-2.19.5.jar
+curl -L https://github.com/eluinstra/ebms-admin/releases/download/ebms-admin-2.20.3/ebms-admin-2.20.3.jar -o lib/ebms-admin-2.20.3.jar
