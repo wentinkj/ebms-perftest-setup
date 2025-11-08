@@ -18,7 +18,7 @@ sudo -u postgres psql -c "grant all privileges on database digipoort to digipoor
 sudo -u postgres psql -d digipoort -c "grant all privileges on schema public to digipoort"
 export PGPASSWORD=digipoort
 for sqlscript in $SQL_SCRIPTS; do
-  psql -h localhost -d digipoort -U digipoort -w -f $HOME/sql/$sqlscript
+  psql -h localhost -d digipoort -U digipoort -w -f $PWD/sql/$sqlscript
 done
 
 sudo -u postgres createuser overheid
@@ -29,5 +29,5 @@ sudo -u postgres psql -c "grant all privileges on database overheid to overheid"
 sudo -u postgres psql -d overheid -c "grant all privileges on schema public to overheid"
 export PGPASSWORD=overheid
 for sqlscript in $SQL_SCRIPTS; do
-  psql -h localhost -d overheid -U overheid -w -f $HOME/sql/$sqlscript
+  psql -h localhost -d overheid -U overheid -w -f $PWD/sql/$sqlscript
 done
