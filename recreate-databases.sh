@@ -10,6 +10,10 @@ if [[ $VERSION == 2.19.* ]]; then
    SQL_SCRIPTS="$SQL_SCRIPTS  8_V2.18.0__Update.sql 9_V2.19.0__Update.sql"
 fi
 
+if [[ $VERSION == 2.20.* ]]; then
+   SQL_SCRIPTS="$SQL_SCRIPTS  8_V2.18.0__Update.sql 9_V2.19.0__Update.sql"
+fi
+
 sudo -u postgres createuser digipoort
 sudo -u postgres psql -c "alter user digipoort with encrypted password 'digipoort'"
 sudo -u postgres dropdb digipoort
